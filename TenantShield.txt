@@ -1,0 +1,23 @@
+
+# ==========================================
+# TenantShield - Start Project
+# ==========================================
+
+# Go to project folder
+Set-Location "$HOME\Downloads\TenantShield-Export-Authorization"
+
+# Start Docker containers
+docker compose up --build -d
+
+# Display running containers
+docker compose ps
+
+Write-Host ""
+Write-Host "TenantShield is starting..." -ForegroundColor Green
+Write-Host "Frontend: http://localhost:5173"
+Write-Host "Backend:  http://localhost:8000"
+Write-Host "API Docs: http://localhost:8000/docs"
+Write-Host ""
+
+# Open the application
+Start-Process "http://localhost:5173"
